@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html th:replace="~{base:: base(~{::title}, ~{:: #conteudo})}" lang="pt-br">
+<head>
+    <title>Inicio</title>
+</head>
+<body>
+<div class = "Container" id="conteudo">
+
+    <div class="container">
+        <nav class=" navbar navbar-dark">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                    <div th:each="produto : ${lista}">
+                        <h1 class="title">Título: <a th:href="@{'/produto/' + ${produto.id}}">
+                            <span th:text="${produto.nome}">Nome</span>
+                        </a> </h1>
+                        <h2 class="subtitle" th:text="${produto.autor}">Autor</h2>
+                        <img class="image-fluid" th:src="${produto.imagem}" alt="Imagem">
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

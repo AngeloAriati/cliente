@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html th:replace="~{base:: base(~{::title}, ~{:: #conteudo})}" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="conteudo">
+        <div class="d-grip gap-2 d-md-block">
+        <a th:href="@{'/produto/'}" class="btn btn-dark btn-sm" type="button">Voltar aos produtos</a>
+        </div>
+        <h1>ID: <span th:text="${produto.id}" ></span></h1>
+        <h1>Nome: <span th:text="${produto.nome}">Nome Do Produto</span></h1>
+        <h1>Autor: <span th:text="${produto.autor}">Nome Do Autor</span></h1>
+        <img th:src="${produto.imagem}" alt="Imagem">
+    </div>
+</body>
+</html>

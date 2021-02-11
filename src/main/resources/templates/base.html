@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html th:fragment="base(titulo, conteudo)" lang="pt-br" xmlns="http://www.w3.org/1999/html">
+<head>
+    <style>
+        #navbar-toggle-check {
+            display: none;
+        }
+        #navbar-toggle-check:checked ~ .collapse {
+            display: block;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title th:replace="${titulo}" >Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}">Início</a>
+
+        <input type="checkbox" id="navbar-toggle-check">
+
+        <label for="navbar-toggle-check" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-navbar">
+            <span class="navbar-toggler-icon"></span>
+        </label>
+
+        <div class="navbar-collapse collapse" id="menu-navbar">
+            <div class="navbar-nav">
+                <a th:href="@{/produto}" class="nav-link">Produtos</a>
+                <a th:href="@{/cliente}" class="nav-link">Clientes</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div th:insert="${conteudo}"> class="btn btn-light">Light </button>
+
+</div>
+</div>
+</body>
+</html>

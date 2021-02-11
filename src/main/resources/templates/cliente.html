@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: base(~{::title}, ~{:: #conteudo})}" lang="pt-br">
+<head>
+
+    <title>clientes</title>
+
+</head>
+<body>
+<div id="conteudo">
+
+    <div th:each ="cliente :${cliente}">
+        <h1 th:text="${cliente.nome}">Nome</h1>
+        <h2 th:text="${cliente.cpf}">CPF </h2>
+        <h2 th:text= "${cliente.email}">Email</h2>
+        <h2 th:text= "${cliente.endereco}" Endereco</h2>
+    </div>
+</div>
+</body>
+</html>
+

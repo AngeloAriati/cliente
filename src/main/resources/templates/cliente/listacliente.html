@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: base(~{::title}, ~{:: #conteudo})}" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>lista cliente</title>
+</head>
+<body>
+<div class = "Container" id="conteudo">
+
+    <div class="container">
+        <nav class=" navbar navbar-dark">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mx-auto" style="width: 200px;">
+                    <a th:href="@{'/cliente/novo/'}" class="btn btn-success mt-2" type="button">Adicionar Cliente</a>
+                    </div>
+                    <div class="row">
+                        <div class="mx-auto" style="width: 400px;">
+                        <p class="fs-1"> Lista de Clientes </p>
+                        </div>
+                        <p class="text-break">=================================================================================</p>
+                        <div th:each="cliente : ${cliente}">
+                            <h1 class="title"th:text="${cliente.nome}"> Nome: </h1>
+                            <h2 class="title" th:text="${cliente.cpf}"> CPF: </h2>
+                            <h2 class="title" th:text="${cliente.email}"> Email: </h2>
+                            <h2 class="title" th:text="${cliente.endereco}"> Endereco: </h2>
+                            <a th:href="@{'/cliente/edit/'+ ${cliente.id}}"class="btn btn-primary mt-2" type="button">Editar cliente</a>
+                            <p class="text-break">=================================================================================</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+</body>
+</html>
